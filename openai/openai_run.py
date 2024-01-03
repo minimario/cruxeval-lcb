@@ -55,7 +55,7 @@ def get_save_dir(mode, model, cot, temperature):
     return os.path.join(base_dir, "generations.json")
         
 if __name__ == "__main__":
-    models = ["gpt-4-1106-preview"]
+    models = ["gpt-4-0613"]
     # models = ["gpt-3.5-turbo-0613"]
     modes = ["output"]
     cots = [False, True]
