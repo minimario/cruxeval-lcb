@@ -1,16 +1,16 @@
 #!/bin/bash
 
 dirs=(
-    "codellama-7b"
-    "codellama-13b"
-    "codellama-34b"
+    # "codellama-7b"
+    # "codellama-13b"
+    # "codellama-34b"
     # "codellama-python-7b"
     # "codellama-python-13b"
     # "codellama-python-34b"
-    # "codetulu-2-34b"
-    # "deepseek-base-1.3b"
-    # "deepseek-base-6.7b"
-    # "deepseek-base-33b"
+    "codetulu-2-34b"
+    "deepseek-base-1.3b"
+    "deepseek-base-6.7b"
+    "deepseek-base-33b"
     # "deepseek-instruct-1.3b"
     # "deepseek-instruct-6.7b"
     # "deepseek-instruct-33b"
@@ -27,16 +27,16 @@ dirs=(
 )
 
 models=(
-    "codellama/CodeLlama-7b-hf"
-    "codellama/CodeLlama-13b-hf"
-    "codellama/CodeLlama-34b-hf"
+    # "codellama/CodeLlama-7b-hf"
+    # "codellama/CodeLlama-13b-hf"
+    # "codellama/CodeLlama-34b-hf"
     # "codellama/CodeLlama-7b-Python-hf"
     # "codellama/CodeLlama-13b-Python-hf"
     # "codellama/CodeLlama-34b-Python-hf"
-    # "allenai/codetulu-2-34b"
-    # "deepseek-ai/deepseek-coder-1.3b-base"
-    # "deepseek-ai/deepseek-coder-6.7b-base"
-    # "deepseek-ai/deepseek-coder-33b-base"
+    "allenai/codetulu-2-34b"
+    "deepseek-ai/deepseek-coder-1.3b-base"
+    "deepseek-ai/deepseek-coder-6.7b-base"
+    "deepseek-ai/deepseek-coder-33b-base"
     # "deepseek-ai/deepseek-coder-1.3b-instruct"
     # "deepseek-ai/deepseek-coder-6.7b-instruct"
     # "deepseek-ai/deepseek-coder-33b-instruct"
@@ -52,7 +52,7 @@ models=(
     # "WizardLM/WizardCoder-Python-34B-V1.0"
 )
 
-temperatures=(0.2 0.8)
+temperatures=(0.2)
 
 for ((i=0; i<${#models[@]}; i++)); do
     model=${models[$i]}
@@ -90,7 +90,7 @@ python main.py \
     --use_auth_token \
     --trust_remote_code \
     --tasks output_prediction \
-    --batch_size 10 \
+    --batch_size 5 \
     --n_samples 10 \
     --max_length_generation 2048 \
     --precision bf16 \

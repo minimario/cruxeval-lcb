@@ -28,6 +28,7 @@ for dir in dirs:
 
             ## sort on keys and remove keys
             print(dir, f"{count} files", len(combined_json))
+            assert len(combined_json) == 479
 
             try: os.makedirs(new_dir)
             except: pass
@@ -52,6 +53,7 @@ for dir in dirs:
                         raise ValueError("Keys overlap")
                     combined_json.update(input_json)
             print(dir, f"{count} files", len(combined_json))
+            assert len(combined_json) == 479
 
             output_json = "generations_raw.json"
             with open(os.path.join(dir, output_json), "w") as fp:
